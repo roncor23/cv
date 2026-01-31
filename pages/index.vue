@@ -138,6 +138,8 @@
 <script setup>
 import { ref } from 'vue'
 
+const { getImagePath } = useImagePath()
+
 const selectedProject = ref(null)
 
 const openProjectModal = (project) => {
@@ -148,7 +150,16 @@ const closeProjectModal = () => {
   selectedProject.value = null
 }
 
-const projects = [
+// Helper to process project images
+const processProjectImages = (project) => {
+  return {
+    ...project,
+    image: getImagePath(project.image),
+    images: project.images?.map(img => getImagePath(img)) || []
+  }
+}
+
+const projectsRaw = [
   {
     title: 'Real Estate Management System (Tidalswing)',
     description: 'Comprehensive real estate management system for property listings, client management, transactions, and reporting. Features responsive design, real-time updates, and cloud infrastructure integration.',
@@ -301,6 +312,9 @@ const projects = [
     ]
   }
 ]
+
+// Process all projects to add baseURL to image paths
+const projects = projectsRaw.map(processProjectImages)
 
 const experiences = [
   {

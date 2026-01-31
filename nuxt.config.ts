@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/',
+    cdnURL: process.env.NUXT_PUBLIC_BASE_URL || '/',
     head: {
       title: 'Ronan Otaza - Software Engineer Portfolio',
       meta: [
@@ -24,6 +25,11 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
+    }
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true
     }
   }
 })
