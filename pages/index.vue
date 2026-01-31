@@ -11,7 +11,7 @@
         <div class="flex flex-col md:flex-row items-center gap-12">
           <div class="w-56 h-56 md:w-64 md:h-64 rounded-3xl overflow-hidden shadow-2xl bg-white p-3 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
             <img 
-              src="/profile.jpg" 
+              :src="getImagePath('/profile.jpg')" 
               alt="Ronan Otaza" 
               class="w-full h-full object-cover rounded-2xl"
             />

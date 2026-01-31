@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/'
+    }
+  },
   app: {
     baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/',
     cdnURL: process.env.NUXT_PUBLIC_BASE_URL || '/',

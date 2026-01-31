@@ -1,19 +1,19 @@
 export const useImagePath = () => {
-  // Get baseURL from app config or environment
-  const app = useNuxtApp()
+  // Get baseURL from runtime config (set during build)
   const config = useRuntimeConfig()
-  const baseURL = app.$router?.options?.base || config.public?.baseURL || process.env.NUXT_PUBLIC_BASE_URL || '/'
+  const baseURL = config.public?.baseURL || '/'
   
   const getImagePath = (path) => {
     if (!path) return ''
-    // If baseURL is just '/', return path as is (works for root and subpaths)
-    if (baseURL === '/') return path
-    // For GitHub Pages with subpath, ensure baseURL is prepended
-    // Static assets from public/ should work, but let's ensure the path is correct
+    // If baseURL is just '/', return path as is
+    if (baseURL === '/' || !baseURL) return path
+    // For GitHub Pages with subpath like '/cv/', prepend it
+    // Ensure baseURL doesn't have trailing slash for comparison
     const cleanBase = baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL
     const cleanPath = path.startsWith('/') ? path : `/${path}`
-    // Only prepend if not already there
+    // Check if path already includes baseURL
     if (cleanPath.startsWith(cleanBase)) return cleanPath
+    // Prepend baseURL
     return `${cleanBase}${cleanPath}`
   }
   
