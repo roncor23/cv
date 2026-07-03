@@ -310,6 +310,38 @@ const projectsRaw = [
       '/img/portfolio/CHED-DTR/dtr1.PNG',
       '/img/portfolio/CHED-DTR/dtr2.PNG'
     ]
+  },
+  {
+    title: 'Document Tracking System Mobile App (CHED Caraga)',
+    description: 'Mobile companion app for the CHED Caraga Document Tracking System, allowing staff to sign in with their CCMIS credentials to track, receive, and route documents on the go with real-time status updates.',
+    technologies: ['Flutter', 'Dart', 'REST API', 'Laravel', 'MySQL'],
+    demoUrl: null,
+    githubUrl: null,
+    image: '/img/portfolio/CHED-MOBILE-DTS/dts1.png',
+    images: [
+      '/img/portfolio/CHED-MOBILE-DTS/dts1.png',
+      '/img/portfolio/CHED-MOBILE-DTS/dts2.png',
+      '/img/portfolio/CHED-MOBILE-DTS/dts3.png',
+      '/img/portfolio/CHED-MOBILE-DTS/dts4.png',
+      '/img/portfolio/CHED-MOBILE-DTS/dts5.png'
+    ]
+  },
+  {
+    title: 'Sparrow Vendor App',
+    description: 'Mobile app for event vendors to manage their business — bookings, portfolio showcase, availability calendar, client messaging, reviews, and invoicing — all from a single elegant dashboard.',
+    technologies: ['Flutter', 'Dart', 'REST API'],
+    demoUrl: null,
+    githubUrl: null,
+    image: '/img/portfolio/SPARROW/sparrow1.png',
+    images: [
+      '/img/portfolio/SPARROW/sparrow1.png',
+      '/img/portfolio/SPARROW/sparrow2.png',
+      '/img/portfolio/SPARROW/sparrow3.png',
+      '/img/portfolio/SPARROW/sparrow4.png',
+      '/img/portfolio/SPARROW/sparrow5.png',
+      '/img/portfolio/SPARROW/sparrow6.png',
+      '/img/portfolio/SPARROW/sparrow7.png'
+    ]
   }
 ]
 
