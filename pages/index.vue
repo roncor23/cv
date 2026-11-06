@@ -1,36 +1,37 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="hero-gradient text-white py-24 md:py-32 relative overflow-hidden">
-      <div class="absolute inset-0 bg-black opacity-10"></div>
-      <div class="absolute inset-0">
-        <div class="absolute top-0 left-0 w-72 h-72 bg-white opacity-10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-300 opacity-10 rounded-full blur-3xl"></div>
-      </div>
+    <section class="hero-bg text-white py-24 md:py-32 relative overflow-hidden">
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="absolute -bottom-40 right-0 w-[28rem] h-[28rem] bg-indigo-400/10 rounded-full blur-3xl" aria-hidden="true"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="w-56 h-56 md:w-64 md:h-64 rounded-3xl overflow-hidden shadow-2xl bg-white p-3 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-            <img 
-              :src="getImagePath('/profile.jpg')" 
-              alt="Ronan Otaza" 
+          <div class="w-52 h-52 md:w-64 md:h-64 rounded-3xl overflow-hidden ring-1 ring-white/15 shadow-2xl bg-white/5 p-2 shrink-0">
+            <img
+              :src="getImagePath('/profile.jpg')"
+              alt="Ronan Otaza"
+              width="256"
+              height="256"
               class="w-full h-full object-cover rounded-2xl"
             />
           </div>
           <div class="flex-1 text-center md:text-left fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">Ronan Otaza</h1>
-            <p class="text-2xl md:text-3xl mb-6 text-blue-100 font-semibold">Software Engineer</p>
-            <p class="text-lg md:text-xl text-blue-50 max-w-2xl leading-relaxed">
-              A hardworking Web Developer who is experienced in mobile and web development. 
-              He is more than able to develop and establish positive attitude towards duties 
-              and responsibilities in an activity, work, or project so that it can be an excellent 
-              output completed before or on the given schedule.
+            <span class="inline-flex items-center gap-2 px-3 py-1 mb-5 rounded-full bg-emerald-400/10 ring-1 ring-emerald-400/30 text-emerald-300 text-sm font-medium">
+              <span class="w-2 h-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
+              Open to work
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-3">Ronan Otaza</h1>
+            <p class="text-2xl md:text-3xl mb-6 text-indigo-200 font-semibold">Full-Stack &amp; Mobile Developer</p>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
+              I build web apps with Vue, Nuxt and Laravel, and mobile apps with Flutter,
+              from the database and APIs through to polished, responsive interfaces.
             </p>
             <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-              <a href="#portfolio" class="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
-                View My Work
-              </a>
-              <a href="#contact" class="px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105">
-                Get In Touch
+              <a href="#portfolio" class="btn-primary">View My Work</a>
+              <a href="#contact" class="btn-secondary-dark">Get In Touch</a>
+              <a :href="getImagePath('/Ronan-Otaza-CV.pdf')" download class="btn-secondary-dark">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Download CV
               </a>
             </div>
           </div>
@@ -39,20 +40,23 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white relative">
-      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600"></div>
+    <section id="about" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="section-title text-center">About Me</h2>
-        <div class="max-w-3xl mx-auto">
-          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 shadow-lg">
-            <p class="text-lg text-gray-700 leading-relaxed">
-              A hardworking Web Developer who is experienced in mobile and web development. 
-              He is more than able to develop and establish positive attitude towards duties 
-              and responsibilities in an activity, work, or project so that it can be an excellent 
-              output completed before or on the given schedule.
-            </p>
-          </div>
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-lg text-gray-600 leading-relaxed">
+            I'm a developer from Butuan City, Philippines, with over nine years of experience across
+            government systems, SaaS platforms and mobile apps. I enjoy owning features end to end:
+            designing the data model, building the API, and shipping an interface people actually like using.
+            I care about clean, maintainable code and delivering on schedule.
+          </p>
         </div>
+        <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div v-for="stat in stats" :key="stat.label" class="flex flex-col-reverse rounded-xl border border-gray-200 bg-gray-50 p-6 text-center">
+            <dt class="text-sm text-gray-500 font-medium">{{ stat.label }}</dt>
+            <dd class="text-3xl md:text-4xl font-bold text-indigo-600 mb-1">{{ stat.value }}</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -114,11 +118,12 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="section-title text-center">Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <SkillCard
-            v-for="(skill, index) in skills"
-            :key="index"
-            :skill="skill"
-          />
+          <div v-for="group in skillGroups" :key="group.name" class="card">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ group.name }}</h3>
+            <ul class="flex flex-wrap gap-2">
+              <li v-for="item in group.items" :key="item" class="tech-badge">{{ item }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -129,6 +134,12 @@
         <h2 class="section-title text-center">Contact</h2>
         <div class="max-w-2xl mx-auto">
           <ContactInfo />
+          <div class="mt-6 text-center">
+            <a :href="getImagePath('/Ronan-Otaza-CV.pdf')" download class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              Download CV (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -141,6 +152,13 @@ import { ref } from 'vue'
 const { getImagePath } = useImagePath()
 
 const selectedProject = ref(null)
+
+const stats = [
+  { value: '9+', label: 'Years experience' },
+  { value: '8', label: 'Companies' },
+  { value: '13', label: 'Projects shown' },
+  { value: '25+', label: 'Technologies' }
+]
 
 const openProjectModal = (project) => {
   selectedProject.value = project
@@ -166,14 +184,14 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'SASS', 'Nuxt', 'MySQL', 'Laravel', 'CI/CD', 'AWS - S3', 'Nginx'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/TIDALSWING-REALD2D/screenshot-1.png',
+    image: '/img/portfolio/TIDALSWING-REALD2D/screenshot-1.webp',
     images: [
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-1.png',
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-3.png',
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-5.png',
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-7.png',
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-2.png',
-      '/img/portfolio/TIDALSWING-REALD2D/screenshot-4.png',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-1.webp',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-3.webp',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-5.webp',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-7.webp',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-2.webp',
+      '/img/portfolio/TIDALSWING-REALD2D/screenshot-4.webp',
     ]
   },
   {
@@ -182,13 +200,13 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS', 'Laravel', 'MySQL'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-BS/BMS1.png',
+    image: '/img/portfolio/CHED-BS/BMS1.webp',
     images: [
-      '/img/portfolio/CHED-BS/BMS1.png',
-      '/img/portfolio/CHED-BS/BMS2.png',
-      '/img/portfolio/CHED-BS/BMS3.png',
-      '/img/portfolio/CHED-BS/BMS4.png',
-      '/img/portfolio/CHED-BS/BMS5.png'
+      '/img/portfolio/CHED-BS/BMS1.webp',
+      '/img/portfolio/CHED-BS/BMS2.webp',
+      '/img/portfolio/CHED-BS/BMS3.webp',
+      '/img/portfolio/CHED-BS/BMS4.webp',
+      '/img/portfolio/CHED-BS/BMS5.webp'
     ]
   },
   {
@@ -197,12 +215,12 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS', 'Laravel'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-DT/dt1.PNG',
+    image: '/img/portfolio/CHED-DT/dt1.webp',
     images: [
-      '/img/portfolio/CHED-DT/dt1.PNG',
-      '/img/portfolio/CHED-DT/dt2.PNG',
-      '/img/portfolio/CHED-DT/dt3.PNG',
-      '/img/portfolio/CHED-DT/dt4.PNG'
+      '/img/portfolio/CHED-DT/dt1.webp',
+      '/img/portfolio/CHED-DT/dt2.webp',
+      '/img/portfolio/CHED-DT/dt3.webp',
+      '/img/portfolio/CHED-DT/dt4.webp'
     ]
   },
   {
@@ -211,14 +229,14 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS', 'Laravel', 'MySQL'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-CSP/csp1.png',
+    image: '/img/portfolio/CHED-CSP/csp1.webp',
     images: [
-      '/img/portfolio/CHED-CSP/csp1.png',
-      '/img/portfolio/CHED-CSP/csp2.png',
-      '/img/portfolio/CHED-CSP/csp3.png',
-      '/img/portfolio/CHED-CSP/csp4.PNG',
-      '/img/portfolio/CHED-CSP/csp5.PNG',
-      '/img/portfolio/CHED-CSP/csp6.PNG'
+      '/img/portfolio/CHED-CSP/csp1.webp',
+      '/img/portfolio/CHED-CSP/csp2.webp',
+      '/img/portfolio/CHED-CSP/csp3.webp',
+      '/img/portfolio/CHED-CSP/csp4.webp',
+      '/img/portfolio/CHED-CSP/csp5.webp',
+      '/img/portfolio/CHED-CSP/csp6.webp'
     ]
   },
   {
@@ -227,10 +245,10 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS', 'Laravel', 'MySQL'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-SMS/sms1.png',
+    image: '/img/portfolio/CHED-SMS/sms1.webp',
     images: [
-      '/img/portfolio/CHED-SMS/sms1.png',
-      '/img/portfolio/CHED-SMS/sms2.png'
+      '/img/portfolio/CHED-SMS/sms1.webp',
+      '/img/portfolio/CHED-SMS/sms2.webp'
     ]
   },
   {
@@ -239,14 +257,14 @@ const projectsRaw = [
     technologies: ['Vue.js', 'Vuex', 'JavaScript', 'CSS'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/FOODICS-KIOSK/foodics1.png',
+    image: '/img/portfolio/FOODICS-KIOSK/foodics1.webp',
     images: [
-      '/img/portfolio/FOODICS-KIOSK/foodics1.png',
-      '/img/portfolio/FOODICS-KIOSK/foodics2.png',
-      '/img/portfolio/FOODICS-KIOSK/foodics3.png',
-      '/img/portfolio/FOODICS-KIOSK/foodics4.png',
-      '/img/portfolio/FOODICS-KIOSK/foodics5.png',
-      '/img/portfolio/FOODICS-KIOSK/foodics6.png'
+      '/img/portfolio/FOODICS-KIOSK/foodics1.webp',
+      '/img/portfolio/FOODICS-KIOSK/foodics2.webp',
+      '/img/portfolio/FOODICS-KIOSK/foodics3.webp',
+      '/img/portfolio/FOODICS-KIOSK/foodics4.webp',
+      '/img/portfolio/FOODICS-KIOSK/foodics5.webp',
+      '/img/portfolio/FOODICS-KIOSK/foodics6.webp'
     ]
   },
   {
@@ -255,17 +273,17 @@ const projectsRaw = [
     technologies: ['Vuejs', 'Vuex', 'TypeScript', 'Sass', 'Vue-Bootstrap'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/SOLO-ADMIN/admin1.png',
+    image: '/img/portfolio/SOLO-ADMIN/admin1.webp',
     images: [
-      '/img/portfolio/SOLO-ADMIN/admin1.png',
-      '/img/portfolio/SOLO-ADMIN/admin2.png',
-      '/img/portfolio/SOLO-ADMIN/admin3.png',
-      '/img/portfolio/SOLO-ADMIN/admin4.png',
-      '/img/portfolio/SOLO-ADMIN/admin5.png',
-      '/img/portfolio/SOLO-ADMIN/admin6.png',
-      '/img/portfolio/SOLO-ADMIN/admin7.png',
-      '/img/portfolio/SOLO-ADMIN/admin8.png',
-      '/img/portfolio/SOLO-ADMIN/admin9.png'
+      '/img/portfolio/SOLO-ADMIN/admin1.webp',
+      '/img/portfolio/SOLO-ADMIN/admin2.webp',
+      '/img/portfolio/SOLO-ADMIN/admin3.webp',
+      '/img/portfolio/SOLO-ADMIN/admin4.webp',
+      '/img/portfolio/SOLO-ADMIN/admin5.webp',
+      '/img/portfolio/SOLO-ADMIN/admin6.webp',
+      '/img/portfolio/SOLO-ADMIN/admin7.webp',
+      '/img/portfolio/SOLO-ADMIN/admin8.webp',
+      '/img/portfolio/SOLO-ADMIN/admin9.webp'
     ]
   },
   {
@@ -274,17 +292,17 @@ const projectsRaw = [
     technologies: ['Vuejs', 'Vuex', 'TypeScript', 'Sass'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/SOLO-MARKEING/solo1.png',
+    image: '/img/portfolio/SOLO-MARKEING/solo1.webp',
     images: [
-      '/img/portfolio/SOLO-MARKEING/solo1.png',
-      '/img/portfolio/SOLO-MARKEING/solo2.png',
-      '/img/portfolio/SOLO-MARKEING/solo3.png',
-      '/img/portfolio/SOLO-MARKEING/solo4.png',
-      '/img/portfolio/SOLO-MARKEING/solo5.png',
-      '/img/portfolio/SOLO-MARKEING/solo6.png',
-      '/img/portfolio/SOLO-MARKEING/solo7.png',
-      '/img/portfolio/SOLO-MARKEING/solo8.png',
-      '/img/portfolio/SOLO-MARKEING/solo9.png'
+      '/img/portfolio/SOLO-MARKEING/solo1.webp',
+      '/img/portfolio/SOLO-MARKEING/solo2.webp',
+      '/img/portfolio/SOLO-MARKEING/solo3.webp',
+      '/img/portfolio/SOLO-MARKEING/solo4.webp',
+      '/img/portfolio/SOLO-MARKEING/solo5.webp',
+      '/img/portfolio/SOLO-MARKEING/solo6.webp',
+      '/img/portfolio/SOLO-MARKEING/solo7.webp',
+      '/img/portfolio/SOLO-MARKEING/solo8.webp',
+      '/img/portfolio/SOLO-MARKEING/solo9.webp'
     ]
   },
   {
@@ -293,10 +311,10 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-AR/ar1.PNG',
+    image: '/img/portfolio/CHED-AR/ar1.webp',
     images: [
-      '/img/portfolio/CHED-AR/ar1.PNG',
-      '/img/portfolio/CHED-AR/ar2.PNG'
+      '/img/portfolio/CHED-AR/ar1.webp',
+      '/img/portfolio/CHED-AR/ar2.webp'
     ]
   },
   {
@@ -305,10 +323,10 @@ const projectsRaw = [
     technologies: ['VueJS', 'Vuex', 'JavaScript', 'SASS', 'Laravel'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-DTR/dtr1.PNG',
+    image: '/img/portfolio/CHED-DTR/dtr1.webp',
     images: [
-      '/img/portfolio/CHED-DTR/dtr1.PNG',
-      '/img/portfolio/CHED-DTR/dtr2.PNG'
+      '/img/portfolio/CHED-DTR/dtr1.webp',
+      '/img/portfolio/CHED-DTR/dtr2.webp'
     ]
   },
   {
@@ -317,13 +335,13 @@ const projectsRaw = [
     technologies: ['Flutter', 'Dart', 'REST API', 'Laravel', 'MySQL'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/CHED-MOBILE-DTS/dts1.png',
+    image: '/img/portfolio/CHED-MOBILE-DTS/dts1.webp',
     images: [
-      '/img/portfolio/CHED-MOBILE-DTS/dts1.png',
-      '/img/portfolio/CHED-MOBILE-DTS/dts2.png',
-      '/img/portfolio/CHED-MOBILE-DTS/dts3.png',
-      '/img/portfolio/CHED-MOBILE-DTS/dts4.png',
-      '/img/portfolio/CHED-MOBILE-DTS/dts5.png'
+      '/img/portfolio/CHED-MOBILE-DTS/dts1.webp',
+      '/img/portfolio/CHED-MOBILE-DTS/dts2.webp',
+      '/img/portfolio/CHED-MOBILE-DTS/dts3.webp',
+      '/img/portfolio/CHED-MOBILE-DTS/dts4.webp',
+      '/img/portfolio/CHED-MOBILE-DTS/dts5.webp'
     ]
   },
   {
@@ -332,15 +350,32 @@ const projectsRaw = [
     technologies: ['Flutter', 'Dart', 'REST API'],
     demoUrl: null,
     githubUrl: null,
-    image: '/img/portfolio/SPARROW/sparrow1.png',
+    image: '/img/portfolio/SPARROW/sparrow1.webp',
     images: [
-      '/img/portfolio/SPARROW/sparrow1.png',
-      '/img/portfolio/SPARROW/sparrow2.png',
-      '/img/portfolio/SPARROW/sparrow3.png',
-      '/img/portfolio/SPARROW/sparrow4.png',
-      '/img/portfolio/SPARROW/sparrow5.png',
-      '/img/portfolio/SPARROW/sparrow6.png',
-      '/img/portfolio/SPARROW/sparrow7.png'
+      '/img/portfolio/SPARROW/sparrow1.webp',
+      '/img/portfolio/SPARROW/sparrow2.webp',
+      '/img/portfolio/SPARROW/sparrow3.webp',
+      '/img/portfolio/SPARROW/sparrow4.webp',
+      '/img/portfolio/SPARROW/sparrow5.webp',
+      '/img/portfolio/SPARROW/sparrow6.webp',
+      '/img/portfolio/SPARROW/sparrow7.webp'
+    ]
+  },
+  {
+    title: 'Sparrow Web Platform',
+    description: 'All-in-one wedding planning platform that brings couples, planners, and vendors into one shared workspace — landing site, guest lists & RSVPs, budgets, timelines, vendor communication, plus an admin dashboard for approvals, events, content, and billing.',
+    technologies: ['Web App', 'REST API', 'Admin Dashboard'],
+    demoUrl: 'https://sparrowvp.com',
+    githubUrl: null,
+    image: '/img/portfolio/SPARROW-WEB/sparrow-web1.webp',
+    images: [
+      '/img/portfolio/SPARROW-WEB/sparrow-web1.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web2.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web3.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web4.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web5.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web6.webp',
+      '/img/portfolio/SPARROW-WEB/sparrow-web7.webp'
     ]
   }
 ]
@@ -349,6 +384,19 @@ const projectsRaw = [
 const projects = projectsRaw.map(processProjectImages)
 
 const experiences = [
+  {
+    title: 'Full-Stack Developer',
+    company: 'Sparrow Co.',
+    period: 'January 2026 - October 2026',
+    duties: [
+      'Developed the Sparrow Vendor mobile app using Flutter and Dart for event vendors.',
+      'Built features for bookings, availability calendar, client messaging, reviews, and invoicing.',
+      'Designed and integrated REST APIs connecting the mobile app to back-end services.',
+      'Collaborated with designers and stakeholders to deliver a clean, intuitive vendor dashboard.',
+      'Debugged and resolved issues across the mobile app and server stack.'
+    ],
+    tools: ['Flutter', 'Dart', 'REST API']
+  },
   {
     title: 'Full-Stack Developer',
     company: 'Capsoft Co.',
@@ -450,31 +498,12 @@ const education = [
   }
 ]
 
-const skills = [
-  { name: 'HTML', level: 'Proficient' },
-  { name: 'CSS', level: 'Proficient' },
-  { name: 'SASS', level: 'Proficient' },
-  { name: 'Bootstrap', level: 'Proficient' },
-  { name: 'Tailwind', level: 'Intermediate' },
-  { name: 'Javascript', level: 'Advanced' },
-  { name: 'TypeScript', level: 'Intermediate' },
-  { name: 'Vue.js', level: 'Advanced' },
-  { name: 'React.js', level: 'Intermediate' },
-  { name: 'PHP', level: 'Advanced' },
-  { name: 'Laravel', level: 'Advanced' },
-  { name: 'CodeIgniter', level: 'Advanced' },
-  { name: 'Flutter', level: 'Intermediate' },
-  { name: 'Git', level: 'Advanced' },
-  { name: 'REST API', level: 'Advanced' },
-  { name: 'Python', level: 'Intermediate' },
-  { name: 'Wordpress', level: 'Advanced' },
-  { name: 'Photoshop', level: 'Advanced' },
-  { name: 'Docker', level: 'Basic' },
-  { name: 'MySQL', level: 'Advanced' },
-  { name: 'PostgreSQL', level: 'Advanced' },
-  { name: 'Linux Server', level: 'Advanced' },
-  { name: 'Apache', level: 'Advanced' },
-  { name: 'NginX', level: 'Intermediate' },
-  { name: 'AWS', level: 'Intermediate' }
+const skillGroups = [
+  { name: 'Frontend', items: ['Vue.js', 'Nuxt', 'JavaScript', 'TypeScript', 'React.js', 'HTML', 'CSS', 'SASS', 'Tailwind', 'Bootstrap'] },
+  { name: 'Backend', items: ['PHP', 'Laravel', 'CodeIgniter', 'Python', 'REST API'] },
+  { name: 'Mobile', items: ['Flutter', 'Dart'] },
+  { name: 'Databases', items: ['MySQL', 'PostgreSQL', 'Supabase'] },
+  { name: 'DevOps & Servers', items: ['Linux Server', 'Apache', 'Nginx', 'AWS', 'Docker', 'Git', 'CI/CD'] },
+  { name: 'Tools & CMS', items: ['WordPress', 'Photoshop'] }
 ]
 </script>

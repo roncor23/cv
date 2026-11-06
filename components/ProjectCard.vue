@@ -3,9 +3,9 @@
     class="card group relative overflow-hidden cursor-pointer"
     @click="openModal"
   >
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     <div class="relative z-10">
-      <div class="relative overflow-hidden rounded-xl mb-4 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 h-48 flex items-center justify-center shadow-inner">
+      <div class="relative overflow-hidden rounded-xl mb-4 bg-gray-100 h-48 flex items-center justify-center shadow-inner">
         <div v-if="!project.image" class="text-6xl text-gray-400 group-hover:scale-110 transition-transform duration-300">
           <svg class="w-24 h-24 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -15,6 +15,8 @@
           v-else
           :src="project.image" 
           :alt="project.title"
+          loading="lazy"
+          decoding="async"
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -22,7 +24,7 @@
           {{ project.images?.length || 0 }} images
         </div>
       </div>
-      <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">{{ project.title }}</h3>
+      <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-indigo-600 transition-colors">{{ project.title }}</h3>
       <p class="text-gray-600 mb-4 line-clamp-3 leading-relaxed">{{ project.description }}</p>
       <div class="flex flex-wrap gap-2 mb-4">
         <span 
@@ -36,7 +38,7 @@
       <div class="flex gap-3">
         <button
           @click.stop="openModal"
-          class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-md text-sm font-medium"
+          class="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-md text-sm font-medium"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>

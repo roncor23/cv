@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ronan Otaza - CV</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1f2937; font-size: 9.6pt; line-height: 1.45; }
+  a { color: inherit; text-decoration: none; }
+  .accent { color: #4f46e5; }
+
+  header { display: flex; gap: 16px; align-items: center; padding-bottom: 12px; border-bottom: 2px solid #4f46e5; margin-bottom: 14px; }
+  header img { width: 74px; height: 74px; border-radius: 12px; object-fit: cover; }
+  h1 { font-size: 24pt; line-height: 1.1; letter-spacing: -0.02em; color: #0f172a; }
+  .role { font-size: 12pt; font-weight: 600; color: #4f46e5; margin-top: 2px; }
+  .contact { display: flex; flex-wrap: wrap; gap: 3px 14px; margin-top: 6px; font-size: 8.8pt; color: #4b5563; }
+
+  h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.08em; color: #4f46e5; margin: 14px 0 7px; }
+  .summary { color: #374151; }
+
+  .job { margin-bottom: 10px; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .job-title { font-weight: 700; color: #0f172a; font-size: 10.2pt; }
+  .company { font-weight: 600; color: #4f46e5; }
+  .period { font-size: 8.6pt; color: #6b7280; white-space: nowrap; }
+  ul { margin: 3px 0 3px 15px; }
+  li { margin-bottom: 1px; }
+  .tools { font-size: 8.5pt; color: #6b7280; }
+  .tools b { color: #374151; font-weight: 600; }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+  .skills div b { color: #0f172a; }
+
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  .project { break-inside: avoid; }
+  .project b { color: #0f172a; }
+  .project p { color: #4b5563; font-size: 9pt; }
+
+  .edu div { display: flex; justify-content: space-between; margin-bottom: 3px; }
+  .edu b { color: #0f172a; }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="../public/profile.jpg" alt="">
+  <div>
+    <h1>Ronan Otaza</h1>
+    <div class="role">Full-Stack &amp; Mobile Developer</div>
+    <div class="contact">
+      <span>+63 935 315 3034</span>
+      <a href="mailto:ronanotaza@gmail.com">ronanotaza@gmail.com</a>
+      <span>Butuan City, Philippines</span>
+      <a href="https://www.linkedin.com/in/ronan-otaza/">linkedin.com/in/ronan-otaza</a>
+      <a href="https://github.com/roncor23">github.com/roncor23</a>
+      <a href="https://roncor23.github.io/cv/">roncor23.github.io/cv</a>
+    </div>
+  </div>
+</header>
+
+<h2>Profile</h2>
+<p class="summary">
+  Full-stack developer with 9+ years of experience building web apps with Vue, Nuxt and Laravel, and mobile apps with Flutter.
+  Has delivered government systems, SaaS platforms and consumer mobile apps across 8 companies, owning features end to end:
+  data modelling, APIs, deployment and polished, responsive interfaces. Holds an MS in Information Technology.
+</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Full-Stack Developer</span> · <span class="company">Sparrow Co.</span></div><span class="period">Jan 2026 – Oct 2026</span></div>
+  <ul>
+    <li>Developed the Sparrow Vendor mobile app in Flutter and Dart for wedding and event vendors.</li>
+    <li>Built bookings, availability calendar, client messaging, reviews and invoicing features.</li>
+    <li>Designed and integrated REST APIs connecting the mobile app to back-end services.</li>
+    <li>Worked with designers and stakeholders to deliver a clean, intuitive vendor dashboard.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Flutter, Dart, REST API</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Full-Stack Developer</span> · <span class="company">Capsoft Co.</span></div><span class="period">Jun 2025 – Dec 2025</span></div>
+  <ul>
+    <li>Built reactive, reusable component-based UIs with Vue.js and Pinia/Vuex.</li>
+    <li>Implemented real-time data syncing and authentication with Supabase Auth and Presence.</li>
+    <li>Managed PostgreSQL databases and wrote Row Level Security (RLS) policies.</li>
+    <li>Developed serverless logic and background tasks with Supabase Edge Functions.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, TypeScript, Supabase, PostgreSQL, SASS</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Full-Stack Developer / DevOps</span> · <span class="company">Tidalswing Co.</span></div><span class="period">Jan 2025 – Dec 2025</span></div>
+  <ul>
+    <li>Built and maintained the front end and back end of a real estate management platform.</li>
+    <li>Automated deployment pipelines and managed cloud infrastructure on AWS.</li>
+    <li>Implemented monitoring, security protocols and logging; debugged issues across the full stack.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, Nuxt, Laravel, MySQL, CI/CD, AWS S3, Nginx, SASS</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Front-End Developer</span> · <span class="company">Foodics Co.</span></div><span class="period">Sep 2023 – Oct 2025</span></div>
+  <ul>
+    <li>Converted Figma designs into a Vue.js self-ordering kiosk application.</li>
+    <li>Delivered new features and designs; resolved support tickets and QA-reported bugs.</li>
+    <li>Worked with back-end developers on API integration and with the project manager on delivery.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, JavaScript, CSS</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Full-Stack Developer</span> · <span class="company">MemberSplash Co.</span></div><span class="period">Jan 2023 – Dec 2023</span></div>
+  <ul>
+    <li>Handled support tickets and fixed QA-reported bugs across Vue.js and WordPress/PHP products.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, JavaScript, CSS, WordPress, PHP</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Front-End Developer</span> · <span class="company">Solo Co.</span></div><span class="period">Aug 2021 – Dec 2022</span></div>
+  <ul>
+    <li>Built new features and designs for the Solo admin and marketing sites with graphic designers.</li>
+    <li>Maintained and updated websites; fixed QA-reported bugs.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, TypeScript, SASS, Bootstrap-Vue</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Mid Full-Stack Developer</span> · <span class="company">CHED</span></div><span class="period">Sep 2019 – Jul 2021</span></div>
+  <ul>
+    <li>Developed numerous internal systems: Budget, Inventory, Billing, Accounting and Document Tracking systems, an SMS Notification System and a Scholarship Portal.</li>
+    <li>Built user interfaces and prototypes from wireframes and designs.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, Vuex, JavaScript, SASS, Laravel, MySQL</div>
+</div>
+
+<div class="job">
+  <div class="job-head"><div><span class="job-title">Junior Full-Stack Developer</span> · <span class="company">Navigatu Co.</span></div><span class="period">Jan 2017 – Jun 2019</span></div>
+  <ul>
+    <li>Built user interfaces and prototypes from wireframes; maintained and updated websites.</li>
+  </ul>
+  <div class="tools"><b>Stack:</b> Vue.js, JavaScript, SASS, Bootstrap, Laravel, MySQL</div>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+  <div><b>Frontend:</b> Vue.js, Nuxt, JavaScript, TypeScript, React.js, HTML, CSS, SASS, Tailwind, Bootstrap</div>
+  <div><b>Backend:</b> PHP, Laravel, CodeIgniter, Python, REST API</div>
+  <div><b>Mobile:</b> Flutter, Dart</div>
+  <div><b>Databases:</b> MySQL, PostgreSQL, Supabase</div>
+  <div><b>DevOps:</b> Linux Server, Apache, Nginx, AWS, Docker, Git, CI/CD</div>
+  <div><b>Tools &amp; CMS:</b> WordPress, Photoshop</div>
+</div>
+
+<h2>Selected Projects</h2>
+<div class="projects">
+  <div class="project"><b>Sparrow Web Platform</b><p>Wedding planning platform connecting couples, planners and vendors, with an admin dashboard.</p></div>
+  <div class="project"><b>Sparrow Vendor App</b><p>Flutter app for vendors: bookings, calendar, messaging, reviews and invoicing.</p></div>
+  <div class="project"><b>Real Estate Management System (Tidalswing)</b><p>Listings, clients, transactions and reporting on AWS infrastructure.</p></div>
+  <div class="project"><b>CHED Systems Suite</b><p>Budget, document tracking, SMS and scholarship systems for a government agency.</p></div>
+</div>
+
+<h2>Education</h2>
+<div class="edu">
+  <div><b>Master of Science in Information Technology</b><span class="period">2024</span></div>
+  <div><b>Bachelor of Science in Information Technology</b><span class="period">2019</span></div>
+</div>
+
+
+</body>
+</html>

@@ -19,12 +19,12 @@
 
 @layer components {
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-gray-800 relative inline-block;
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-12 text-gray-900 relative block;
   }
   
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full;
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-indigo-600 rounded-full;
     bottom: -10px;
   }
   
@@ -37,36 +37,19 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent;
-    background-size: 200% 200%;
-    animation: gradient-shift 3s ease infinite;
+    @apply text-gray-900;
   }
   
-  @keyframes gradient-shift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+  .hero-bg {
+    background: radial-gradient(ellipse at top left, #312e81 0%, #0f172a 55%), #0f172a;
   }
-  
-  .hero-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-indigo-500 text-white shadow-lg shadow-indigo-500/20 hover:bg-indigo-400 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
   }
-  
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white ring-1 ring-white/30 hover:bg-white/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white;
   }
   
   .fade-in {
@@ -85,7 +68,7 @@
   }
   
   .tech-badge {
-    @apply px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-gray-700 rounded-full text-sm font-medium border border-blue-100 hover:border-blue-300 transition-colors;
+    @apply px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium;
   }
   
   @keyframes shimmer {
@@ -99,5 +82,19 @@
   
   .animate-shimmer {
     animation: shimmer 2s infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

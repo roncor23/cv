@@ -12,10 +12,10 @@
       <div class="relative min-h-screen flex items-center justify-center p-4">
         <div class="relative bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
           <!-- Header -->
-          <div class="sticky top-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex justify-between items-center z-10">
+          <div class="sticky top-0 bg-indigo-600 text-white p-6 flex justify-between items-center z-10">
             <div>
               <h2 class="text-2xl md:text-3xl font-bold mb-2">{{ project.title }}</h2>
-              <p class="text-blue-100 text-sm md:text-base">{{ project.description }}</p>
+              <p class="text-indigo-100 text-sm md:text-base">{{ project.description }}</p>
             </div>
             <button 
               @click="closeModal"
@@ -36,7 +36,7 @@
                 <span 
                   v-for="(tech, index) in project.technologies" 
                   :key="index"
-                  class="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-gray-700 rounded-full text-sm font-medium border border-blue-100"
+                  class="px-3 py-1 bg-gray-50 text-gray-700 rounded-full text-sm font-medium border border-indigo-100"
                 >
                   {{ tech }}
                 </span>
@@ -50,7 +50,7 @@
                 <div 
                   v-for="(image, index) in project.images" 
                   :key="index"
-                  class="relative group cursor-pointer rounded-lg overflow-hidden border-2 border-gray-200 hover:border-blue-500 transition-all"
+                  class="relative group cursor-pointer rounded-lg overflow-hidden border-2 border-gray-200 hover:border-indigo-500 transition-all"
                   @click="openImageModal(image)"
                 >
                   <img 
@@ -75,7 +75,7 @@
                 :href="project.demoUrl" 
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-md font-medium"
+                class="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-md font-medium"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
