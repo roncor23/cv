@@ -48,7 +48,9 @@
             I'm a developer from Butuan City, Philippines, with over nine years of experience across
             government systems, SaaS platforms and mobile apps. I enjoy owning features end to end:
             designing the data model, building the API, and shipping an interface people actually like using.
-            I care about clean, maintainable code and delivering on schedule.
+            I care about clean, maintainable code and delivering on schedule. These days I build with
+            AI coding assistants like Claude Code, which help me ship faster while I keep ownership of the
+            architecture, code review and quality.
           </p>
         </div>
         <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -393,9 +395,10 @@ const experiences = [
       'Built features for bookings, availability calendar, client messaging, reviews, and invoicing.',
       'Designed and integrated REST APIs connecting the mobile app to back-end services.',
       'Collaborated with designers and stakeholders to deliver a clean, intuitive vendor dashboard.',
-      'Debugged and resolved issues across the mobile app and server stack.'
+      'Debugged and resolved issues across the mobile app and server stack.',
+      'Used AI-assisted development (Claude Code) for scaffolding, refactoring, debugging and code review, which shortened delivery time while keeping code quality high.'
     ],
-    tools: ['Flutter', 'Dart', 'REST API']
+    tools: ['Flutter', 'Dart', 'REST API', 'Claude Code']
   },
   {
     title: 'Full-Stack Developer',
@@ -504,6 +507,6 @@ const skillGroups = [
   { name: 'Mobile', items: ['Flutter', 'Dart'] },
   { name: 'Databases', items: ['MySQL', 'PostgreSQL', 'Supabase'] },
   { name: 'DevOps & Servers', items: ['Linux Server', 'Apache', 'Nginx', 'AWS', 'Docker', 'Git', 'CI/CD'] },
-  { name: 'Tools & CMS', items: ['WordPress', 'Photoshop'] }
+  { name: 'Tools & AI', items: ['Claude Code', 'AI-Assisted Development', 'Prompt Engineering', 'WordPress', 'Photoshop'] }
 ]
 </script>
